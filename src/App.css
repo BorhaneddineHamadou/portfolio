@@ -2,8 +2,10 @@
 
 :root{
   --primary-white: #fff;
-  --primary-orange: #05F6E7;
+  --primary-green: #05F6E7;
   --primary-dark: rgba(255,255,255,0);
+  --primary-red: #f60514;
+  --primary-red-hover:#f33501;
 }
 
 body{
@@ -13,7 +15,19 @@ body{
 .logo{
   width: 16.25rem;
 }
+
+@media(max-width:768px){
+  .navbar-brand{
+    width:7rem
+  }
+  .logo{
+    width: 14rem;
+  }
+}
 /****************** Navbar Links *************/
+nav{
+  z-index: 2;
+}
 nav a.nav-link{
   letter-spacing: 0.0375rem;
   cursor: pointer; 
@@ -32,9 +46,77 @@ nav ul li{
 }
 
 .navbar-nav li a.active, .navbar-nav li a.active:focus{
-  border-top: .1875rem solid var(--primary-orange);
+  border-top: .1875rem solid var(--primary-green);
 }
 
 .navbar-nav li a:hover{
-  border-top: .1875rem solid var(--primary-orange);
+  border-top: .1875rem solid var(--primary-green);
+}
+
+/************ Header ************/
+.header-wraper{
+  position: relative;
+  background: url("primary_background.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+}
+
+.main-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.main-info h1{
+  color: var(--primary-green);
+  text-transform: uppercase;
+}
+
+.typed-text{
+  font-size: 2rem;
+  color: var(--primary-white);
+}
+
+.btn-main-offer{
+  border: 1px solid var(--primary-red);
+  text-transform: uppercase;
+  padding: 10px 12px 12px 12px;
+  color: var(--primary-white);
+  margin: 2rem;
+  text-decoration: none;
+}
+.btn-main-offer:hover{
+  text-decoration: none;
+  background-color: var(--primary-red);
+  color: var(--primary-white);
+  transition: .2s all ease-in-out;
+}
+
+/*************** Style Particles **************/
+.tsparticles-canvas-el{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+
+@media(max-width:768px){
+  .particles-canvas{
+    display: none;
+  }
+  .main-info h1{
+    font-size: 1.7rem !important;
+  }
+  .typed-text{
+    font-size: 1.3rem !important;
+  }
 }
