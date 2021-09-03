@@ -1,33 +1,23 @@
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap-social/bootstrap-social.css';
 import './App.css';
-import Header from './components/HeaderComponent';
-import Navbar from './components/NavbarComponent';
-import Particles from 'react-particles-js';
+import { ConfigureStore } from './redux/configureStore';
+import { Provider } from 'react-redux';
+import Main from './components/MainComponent';
+import { BrowserRouter } from 'react-router-dom';
+
 
 function App() {
+
+  const store = ConfigureStore();
   return (
-    <>
-       <Particles className="particles-canvas" params={{
-         particles: {
-             number: {
-               value: 30,
-               density: {
-                 enable:true,
-                 value_area: 900
-               }
-             },
-             shape:{
-               type: 'circle',
-               stroke: {
-                 width: 6,
-                 color: "#05F6E7"
-               }
-             }
-         }
-       }} />
-       <Navbar />
-       <Header />
-    </>
+    <Provider store={store}>
+      <BrowserRouter>
+         <Main />
+      </BrowserRouter>
+    </Provider>
   );
 }
 

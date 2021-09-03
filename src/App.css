@@ -2,14 +2,18 @@
 
 :root{
   --primary-white: #fff;
-  --primary-green: #05F6E7;
-  --primary-dark: rgba(255,255,255,0);
+  --primary-green: #00ded0;
+  --primary-dark: rgba(33,37,41,1);
   --primary-red: #f60514;
   --primary-red-hover:#f33501;
 }
 
 body{
   font-family: 'Montserrat', sans-serif;
+}
+
+*{
+  transition: .2s all ease-in-out;
 }
 /***************  Navbar Styles  **************/
 .logo{
@@ -119,4 +123,239 @@ nav ul li{
   .typed-text{
     font-size: 1.3rem !important;
   }
+}
+
+/***************** About Page **********************/
+
+.avatar{
+  width: 100%;
+  border-radius: 50%;
+}
+
+.about-container{
+  padding: 50px 0px 50px 0px;
+}
+
+.avatar-container{
+  width: 70%;
+  border-radius: 50%;
+  border: 1.5px solid var(--primary-green);
+  padding: 4px;
+  float: right;
+}
+
+.about-text-container h1{
+  text-transform: uppercase;
+  color: var(--primary-green);
+}
+
+@media(max-width: 768px){
+  .avatar-container{
+    float: none;
+    padding: 0;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  .about-container{
+    margin: 50px auto;
+  }
+}
+
+/****************** skills ***************/
+
+.skills-container{
+  padding: 50px 0px 50px 0px;
+  background-color: #F4F4F3;
+}
+.skills-container h1{
+  color: var(--primary-dark);
+  text-align: center;
+  text-transform: uppercase;
+}
+.skill-card{
+  background-color: var(--primary-white);
+  border-bottom: 5px solid var(--primary-green);
+  padding: 20px 10px 10px 10px;
+  text-align: center;
+  height: 250px;
+}
+
+.skill-card:hover{
+  background-color: var(--primary-green);
+  border-bottom: 5px solid var(--primary-dark);
+}
+
+
+.skill-icon{
+  color: var(--primary-white);
+  font-size: 25px;
+}
+
+.skill-icon-container{
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  border-radius: 50%;
+  background-color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skill-card h4{
+  font-size: 18px;
+}
+
+@media(max-width: 991px){
+  .skill-card{
+    margin: auto !important;
+    margin-bottom: 30px !important;
+  }
+}
+.skill-card:hover > .skill-icon-container{
+  background-color: var(--primary-white);
+}
+
+.skill-card:hover .skill-icon{
+  color: var(--primary-dark);
+}
+
+/********************** Portfolio *******************/
+.portfolio-container{
+  padding: 50px 0px 50px 0px;
+  background-color: #F4F4F3;
+}
+
+.portfolio-container h1{
+  color: var(--primary-dark);
+  text-align: center;
+  text-transform: uppercase;
+}
+.portfolio-image-container{
+  padding: 5px;
+  border-radius: 1px;
+  border: 2px solid var(--primary-green);
+  height: 200px;
+  position: relative;
+  cursor: pointer;
+}
+
+.portfolio-image-container .h6{
+  position: absolute;
+  z-index: -1;
+  color: var(--primary-dark);
+  text-align: center;
+  font-weight: 700 !important;
+  width:100%;
+  top:50%;
+  transform: translateY(-50%)
+}
+
+.h6 img{
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+@media(max-width: 991px){
+  .portfolio-image-container{
+    margin: auto !important;
+    margin-bottom: 30px !important;
+  }
+}
+
+.portfolio-image-container:hover{
+  background-color: var(--primary-green);
+}
+
+.portfolio-image-container:hover > .h6{
+  z-index: 1;
+}
+
+.portfolio-image-container:hover > img{
+  display: none;
+}
+
+
+/********************* Certifications **********************/
+
+.certifications-wrapper{
+  position: relative;
+  background: url("secondary_background.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: fit-content;
+  padding: 50px 0px 50px 0px;
+}
+
+.certifications-wrapper h1{
+  text-align: center;
+  color: var(--primary-green);
+  text-transform: uppercase;
+}
+
+.carousel{
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.carousel img{
+  width:80%;
+  display: block;
+  margin: auto;
+}
+
+.carousel-caption p{
+  font-weight: 500;
+}
+
+@media(max-width:797px){
+  .carousel{
+    width: 100%;
+  }
+  
+  .carousel img{
+    width:90%;
+  }
+}
+
+/**************** Logo *****************/
+
+.logo-wrapper{
+  padding: 50px 0px 50px 0px;
+  
+}
+
+.logo-wrapper .video-circle {
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin:auto;
+  }
+
+/******************* Contact *********************/
+
+.contact-wrapper{
+  padding: 50px 0px 50px 0px;
+  background-color: var(--primary-dark);
+  height: fit-content;
+}
+
+.contact-wrapper h1{
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--primary-green);
+}
+
+
+/**************** Footer *******************/
+
+.footer-wraper{
+  padding: 50px 0px 10px 0px;
+  background-color: #000;
+  height: fit-content;
+}
+.footer-wraper a{
+  text-decoration: none;
+  color: var(--primary-white); 
 }
