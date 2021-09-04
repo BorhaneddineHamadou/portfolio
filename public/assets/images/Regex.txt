@@ -1,0 +1,21 @@
+Regex Syntax : /pattern/attribute
+=================================
+Attributes List : 
+[i] : insensible a la case
+[g] : global (all occurences)
+[m] : Multi Line Search
+=================================
+Brackets Use :
+[...] character
+[^ ...] Not Character
+[a-e] Tous les lettres entre a et e (a, b, c, d et e)
+[0-9] Range Numbers
+[^0-9] Not Range
+[A-g] = Range [A-Z] + Range [a-g] 
+[0-9a-z] Double Range
+
+string.replace(/L/, '@')
+string.replace(/L/i, '@') => Insensible a la case
+string.replace(/L/gi, '@')
+string.replace(/[e]/gi, '@') => Remplacer tout e miniscule ou majuscule
+string.replace(/[^e]/gi, '@') => Remplacer tout character != 'e'

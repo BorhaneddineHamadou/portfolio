@@ -23,13 +23,13 @@ const Skills = (props) => {
                 </div>
                 <div className="row skill-cards-container">
                     <RenderSkill icon={faPenNib} skillTitle="Ui Design" 
-                    description="Lorem ipsum text, just keep going" />
+                    description="Create professional Ui designs for Web | Mobile | Desktop applications" />
                     <RenderSkill icon={faFileCode} skillTitle="Web Development" 
-                    description="To add later, just keep going To add later, just keep going To add later, just keep going" />
+                    description="Build user-friendly Web Applications with React.js, bootstrap and many modern Libraries" />
                     <RenderSkill icon={faMobile} skillTitle="Mobile Development" 
-                    description="Borhaneddine Hamadou, Web/Modbile Dev" />
+                    description="Developing beautiful cross-platform mobile applications with react-native" />
                     <RenderSkill icon={faBrain} skillTitle="Machine Learning" 
-                    description="To add later, just keep going To add later, just keep going To add later, just keep going" />
+                    description="Honestly, I'm currently learning about Machine Learning and Data Science. Future Data Scientist :')" />
                 </div>
         </div>
        </div> 

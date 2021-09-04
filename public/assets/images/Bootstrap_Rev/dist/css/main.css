@@ -1,0 +1,16 @@
+.blue{
+    background-color: blue;
+}
+.yellow{
+    background-color: yellow; 
+}
+.red{
+    background-color: red;
+}
+.blue, .yellow, .red{
+    padding: 30px;
+    text-align: center;
+}
+.borhan{
+    margin-top: 20px;
+}

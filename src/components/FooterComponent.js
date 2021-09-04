@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faPhoneAlt, faMapMarkerAlt, faEnvelope, fa} from '@fortawesome/free-solid-svg-icons';
+import {faPhoneAlt, faMapMarkerAlt, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
     return(
@@ -23,13 +23,13 @@ const Footer = () => {
                         <p><a href="#contact">CONTACT</a></p>
                     </div>
                     <div className="col-md-4">
-                        <a className="btn btn-social-icon btn-google me-4" href="#">
+                        <a className="btn btn-social-icon btn-google me-4" target="_blank" href="mailto:kb_hamadou@esi.dz">
                             <i className="fa fa-google fa-lg" style={{color: "#FFF"}}></i>
                         </a>
-                        <a className="btn btn-social-icon btn-linkedin me-4" href="#">
+                        <a className="btn btn-social-icon btn-linkedin me-4" target="_blank" href="https://www.linkedin.com/in/borhaneddine-hamadou-531043189/">
                             <i className="fa fa-linkedin fa-lg" style={{color: "#FFF"}}></i>
                         </a>
-                        <a className="btn btn-social-icon btn-github" href="#">
+                        <a className="btn btn-social-icon btn-github" target="_blank" href="https://github.com/BorhaneddineHamadou">
                             <i className="fa fa-github fa-lg" style={{color: "#FFF"}}></i>
                         </a>
                     </div>

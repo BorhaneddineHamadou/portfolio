@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>List Of Cars</title>
+        <style>
+            .hidden{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="car_form">
+            Car Make : <input type="text" placeholder="Enter the car make" id="car_make">&nbsp;&nbsp;&nbsp;
+            Car Color : <input type="text" placeholder="Enter the car color" id="car_color">
+            <input type="submit" value="Add Car" style="cursor: pointer;padding: 5px 10px;">
+        </form>
+        <span style="color: crimson;font-weight: bold;" id="error" class="hidden">Something Went Wrong !</span>
+        <div id="list_of_cars">
+            {% for c in cars %}
+            <h2>{{c.car_id}} - My make is {{c.car_make}} with the color {{c.car_color}}   <span style="color: blue;cursor: pointer;" class="delete_car" data-id='{{c.car_id}}'>&#8855;</span></h2>
+            {% endfor %} 
+        </div>
+
+        <script>
+            document.getElementById('car_form').onsubmit = function(e){
+                e.preventDefault();
+                fetch('/add_car', {
+                    method : 'POST',
+                    body : JSON.stringify({
+                        'car_make' : document.getElementById('car_make').value,
+                        'car_color' : document.getElementById('car_color').value
+                    }),
+                    headers : {
+                        'Content-Type' : 'application/json'
+                    }
+                }).then(function(respose){
+                    return respose.json() 
+                }).then(function(jsonResponse){
+                    const H2 = document.createElement('H2');
+                    H2.innerHTML = jsonResponse['car_id'] + ' - My make is ' + jsonResponse['car_make'] + ' with the color ' + jsonResponse['car_color']+'   ';
+                    const SPAN = document.createElement('SPAN');
+                    SPAN.setAttribute('style', 'color: blue;cursor: pointer;');
+                    SPAN.setAttribute('class', 'delete_car');
+                    SPAN.setAttribute('data-id', jsonResponse['car_id']);
+                    SPAN.innerHTML='&#8855;'
+
+                    H2.appendChild(SPAN);
+
+                    document.getElementById('list_of_cars').appendChild(H2);
+                }).catch(function(){
+                    document.getElementById('error').classList.remove('hidden');
+                })
+            }
+
+            delete_cars = document.querySelectorAll('.delete_car');
+            for(let i=0;i<delete_cars.length;i++){
+                delete_cars[i].onclick = function(e){
+                    fetch('/delete_car/'+e.target.dataset.id, {
+                        method : 'DELETE',
+                        headers : {
+                            'Content-Type' : 'application/json'
+                        }
+                    }).then(function(){
+                        delete_cars[i].parentNode.remove()
+                    }).catch(function(){
+                        document.getElementById('error').classList.remove('hidden')
+                    })
+                }
+            }
+        </script>
+    </body>
+</html>

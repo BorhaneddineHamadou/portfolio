@@ -1,0 +1,153 @@
+%\documentclass[a4paper,10pt,twocolumn]{article} %Pour présenter l'article sous forme de 2 colonnes
+%Pour un document multicolonnes, il suffit d'ajouter apres begin document :
+% begin{multicols}{4}
+\documentclass{article} %Type de document
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fancybox} %to use doublebox,ovalbox & shadowbox
+\usepackage{color}
+%\pagecolor{red}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry} %modify marging
+\usepackage{hyperref} %pour mettre les liens du sommaire vers différents pages
+\usepackage{graphicx} %permettre d'inserer les images
+\usepackage[tikz]{bclogo}
+\usepackage{verbatim} %Pour afficher les source codes
+\newcommand{\be}{\begin{enumerate}} %we can now use \be a la place de \bein{enumerate}
+\title{Mon document latex} %titre du document
+\author{Auteur du document}
+\date{07/08/2021} %Date de création
+\begin{document}
+\renewcommand{\contentsname}{Table des matière} %changer le nom du table de matière
+\tableofcontents
+\maketitle{} %Génération du titre
+\section{Ma première section ici}
+\subsection{Partie 1}
+Je peux aussi faire des sous sections
+je mets ici le contenu de ma sous section
+\\je peux aussi revenu à la ligne !
+\\Et écrire autant de lignes que je veux 
+\\
+\textit{Mon text en italic}
+\\
+\textbf{Voici un text en gras}
+\\
+\underline{Je souligne mon text}
+\center{text centré}
+\\
+\flushright{Alignement à droite}
+\flushleft{Alignement è gauche}
+\newpage
+Hello
+\\
+\hspace{2cm} \vspace{2cm} Here is a new page
+\\ Hello in the new page
+\vspace{2cm}
+\\
+\tiny{Text avec taille miniscule}
+\\
+\small{Text avec taille petite}
+\\
+\normalsize{Text avec taille normale}
+\\
+
+{\Huge Taille très grande !
+\\All text here is Huge !
+}
+\\
+\vspace{2cm}
+\fbox{
+\begin{minipage}{5cm} %5cm c'est le largeur du text encadré
+1ère ligne du text encadré !
+\\
+2ème ligne du text encadré !
+\\
+3ème ligne du text encadré !
+\end{minipage}
+}
+\\
+\vspace{1cm}
+\shadowbox{Text ombré !}
+\\
+\vspace{1cm}
+\doublebox{Text doublement encadré}
+\\
+\vspace{1cm}
+\ovalbox{Text dans un cadre a coins arrondis}
+\\
+{\center
+\line(1,0){200} % x = 0 et y = 1 et 250 largeur
+\line(0,1){200}
+}
+\\
+Voici les modules que vous devez valider :
+\begin{itemize}
+\item Analyse
+\item Proba
+\item Algo
+\end{itemize}
+Voici les memes modules mais cette fois enumerés :
+%\be
+\begin{enumerate}
+\item Analyse
+\item Proba
+\item Algo
+\end{enumerate}
+Une liste descriptive :
+\begin{description}
+\item[Analyse : ] Analyse 1, Analyse 2
+\item[Algèbre : ] Algèbre 1, Algèbre 2
+\item[Algo : ] Algo 1, Algo 2
+\end{description}
+\begin{tabular}{|c||c|c|} % c : contenu centré; l : left; r : right
+\hline
+colonne 1 & colonne 2 & colonne 3 
+\\
+\hline
+1 & 2 & 3
+\\
+\hline
+4 & 5 & 6
+\\
+\hline
+\end{tabular}
+\\
+\vspace{1cm}
+\textcolor{red}{\textbf This text is Red !}
+\textcolor{blue}{\\ But this text is Blue, WOW !}
+
+\colorbox{blue}{Text inside the box}
+\\
+Le lorem ipsum\footnote{Note en bas de page} est, en imprimerie, 
+une suite de mots sans signification utilisée à titre provisoire 
+pour calibrer une mise en page, le texte définitif venant remplacer le 
+faux-texte dès qu'il est prêt ou que la mise en page est achevée.\marginpar{Une note en marge}
+\\
+\vspace{1cm}
+\includegraphics[scale=0.5]{img/ESI.png}
+\\
+\vspace{1cm}
+%La création d'une boite design : avec le package bclogo
+\begin{bclogo}[couleur = green!30, arrondi = 0.1, ombre=true, epOmbre=0.45, couleurOmbre=black!85, logo=\bcplume]{Mon titre ici} %30 c'est l'opacité
+Exemple d'une boite bclogo
+\\ c'est magnifique !
+\end{bclogo}
+\vspace{1cm}
+%Afficher un source code au sein du pdf : avec le package verbatim
+\begin{verbatim}
+$(document).on('click', '.todel', function () {
+        var row = $(this).closest('tr');
+        var item_id = row.attr('data-item-id');
+        delete toitems[item_id];
+        row.remove();
+        if(toitems.hasOwnProperty(item_id)) { } else {
+            localStorage.setItem('toitems', JSON.stringify(toitems));
+            loadItems();
+            return;
+        }
+    });
+\end{verbatim}
+\section{conclusion}
+Je mets ma conclusion ici
+Et finalement la fin de mon document latex
+\\Merci !
+\end{document}

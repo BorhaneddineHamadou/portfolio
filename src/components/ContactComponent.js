@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Control, Errors, LocalForm } from 'react-redux-form';
-import { Col, Label, Row, Button } from 'reactstrap';
+import { Col, Label, Row, Button, ModalHeader, ModalBody, Modal } from 'reactstrap';
+import emailjs from 'emailjs-com';
 
 
 const required = (val) => val && val.length;
@@ -8,10 +9,32 @@ const minLength = (len) => val => !(val) || val.length >= len;
 const validPhone = (val) => /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g.test(val);
 const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
+
+
 const Contact = () => {
 
-    function handleSubmit(values) {
-       alert(JSON.stringify(values));
+    const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+    const [isFailedModalOpen, setIsFailedModalOpen] = useState(false);
+    
+    const toggleSuccessModal = () => {
+        setIsSuccessModalOpen(!isSuccessModalOpen);
+    }
+
+    const toggleFailedModal = () => {
+        setIsFailedModalOpen(!isFailedModalOpen);
+    }
+
+    function sendEmail(values, e){
+        e.preventDefault();
+        emailjs.sendForm('service_aea8f1d', 'template_ttl1jci', e.target, 'user_kIPDG5G3IThigWWS3inmX')
+        .then((result) => {
+            console.log('Email Sent : ' + result.text);
+            toggleSuccessModal();
+        }, (error) => {
+            console.log('Error : ' + error.text);
+            toggleFailedModal();
+        });
+        e.target.reset();
     }
 
     return(
@@ -19,7 +42,7 @@ const Contact = () => {
             <div className="container">
                 <h1 className="mb-2">Contact Me</h1>
                 <p className="text-light text-center fs-5 mb-4">Contact Me Directly Using This Form</p>
-                <LocalForm onSubmit={(values)=>handleSubmit(values)}>
+                <LocalForm onSubmit={sendEmail}>
                     <Row>
                         <Col md={6}>
                             <Row className={"mb-3 form-group"}>
@@ -113,6 +136,19 @@ const Contact = () => {
                         </Col>
                     </Row>
                 </LocalForm>
+                <Modal isOpen={isSuccessModalOpen} toggle={toggleSuccessModal}>
+                    <ModalHeader toggle={toggleSuccessModal}>Thank You !</ModalHeader>
+                    <ModalBody>
+                        <p>Your form submission has been received.</p>
+                    </ModalBody>
+                </Modal>
+
+                <Modal isOpen={isFailedModalOpen} toggle={toggleFailedModal}>
+                    <ModalHeader toggle={toggleFailedModal}>Sorry !</ModalHeader>
+                    <ModalBody>
+                        <p>Your form submission could not be sent, please try again</p>
+                    </ModalBody>
+                </Modal>
             </div>
         </div>
     );

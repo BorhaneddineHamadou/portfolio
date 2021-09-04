@@ -25,7 +25,7 @@ const Portfolio = (props) => {
                 <RenderImage image="assets/images/somu.png" title="SomuAgency Website" logo="assets/images/logo_somu.png" />
                 <RenderImage image="assets/images/ahmedsellami.png" title="Ahmed Sellami Website" logo="assets/images/logo_ahmed.png" />  
                 <RenderImage image="assets/images/imtyaz.png" title="Imtyaz Android App" logo="assets/images/logo_imtyaz.png"/> 
-                <RenderImage image="assets/images/souqziwa.jpg" title="Souq Ziwa Android App" logo="assets/images/logo_ziwa.png"/> 
+                <RenderImage image="assets/images/souqziwa.png" title="Souq Ziwa Android App" logo="assets/images/logo_ziwa.png"/> 
             </div>
         </div>
     </div>

@@ -14,14 +14,17 @@ function About(props) {
                     <div className="about-text-container">
                         <h1>About Me</h1> 
                         <p>
-                        Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre 
-                        provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte 
-                        dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise un texte en 
-                        faux latin, le Lorem ipsum ou Lipsum.
-                        Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre 
-                        provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte 
-                        dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise un texte en 
-                        faux latin, le Lorem ipsum ou Lipsum.
+                            Hey there ! <br/>
+                            I'am <strong>Borhaneddine HAMADOU</strong>, fourth year student at the Higher National College of Computer Sciences of Algiers 
+                            (ESI ex.INI). I'm passionate about mathematics, programming, coding and problem solving. On the professional side, 
+                            I'm <strong>Web/Mobile Applications developer</strong> for more than 3 years, and I've worked on a lot of projects since that time. 
+                            Also, I have a solid knowledge in <strong>Ui design</strong>, and I contributed in some projects as a Ui Designer. As well, I have 
+                            advanced knowledge in <strong>React.js</strong> and <strong>React Native</strong> and many JS labraries.
+                            Currently, I am studying about <strong>Machine Learning</strong> and <strong>Data Science</strong> and I would like to direct my graduation project 
+                            and my career to this field.<br />
+                            Finally, thank you for being here, I'm always available and you can <a className="text-danger" href="#contact">contact me</a> any time.
+                            <br /><br /> I wish you all the success !
+
                         </p>
                     </div> 
                 </div>
