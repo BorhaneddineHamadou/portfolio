@@ -1,5 +1,0 @@
-ip route 10.8.4.0 255.255.255.0 FastEthernet2 
-ip route 10.8.5.0 255.255.255.192 FastEthernet2 
-ip route 10.8.5.64 255.255.255.240 FastEthernet2 
-ip route 10.8.5.88 255.255.255.248 FastEthernet2 
-ip route 10.8.5.84 255.255.255.252 FastEthernet2 
