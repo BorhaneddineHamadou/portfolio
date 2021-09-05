@@ -20,7 +20,7 @@ function About(props) {
                             I'm <strong>Web/Mobile Applications developer</strong> for more than 3 years, and I've worked on a lot of projects since that time. 
                             Also, I have a solid knowledge in <strong>Ui design</strong>, and I contributed in some projects as a Ui Designer. As well, I have 
                             advanced knowledge in <strong>React.js</strong> and <strong>React Native</strong> and many JS labraries.
-                            Currently, I am studying about <strong>Machine Learning</strong> and <strong>Data Science</strong> and I would like to direct my graduation project 
+                            Currently, I am studying about <strong>Machine Learning</strong> and <strong>Data Science</strong> and I would like to orient my graduation project 
                             and my career to this field.<br />
                             Finally, thank you for being here, I'm always available and you can <a className="text-danger" href="#contact">contact me</a> any time.
                             <br /><br /> I wish you all the success !

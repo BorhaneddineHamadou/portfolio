@@ -10,6 +10,7 @@
 
 body{
   font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden !important;
 }
 body.modal-open {
   padding: 0 !important;
@@ -365,7 +366,7 @@ nav ul li{
   font-size: 40px;
   line-height: normal;
   color: #000;
-  background: transparent url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org….586 8 .293 1.707a1 1 0 010-1.414z\'/%3e%3c/svg%3e') center/1em auto no-repeat;
+  background: transparent url('data:image/svg xml,<svg xmlns=\'http://www.w3.org….586 8 .293 1.707a1 1 0 010-1.414z\'/></svg>') center/1em auto no-repeat;
   border: 0;
   border-radius: .25rem;
   opacity: .5;
